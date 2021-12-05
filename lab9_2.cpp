@@ -3,11 +3,24 @@
 #include<string>
 using namespace std;
 
-//[Missing Code 1] Write definition of the function findGrade() here.
+char findGrade(double score){
+    if(score > 90){
+        return 'A';
+    }else if(score > 75 && score <= 90){
+        return 'B';
+    }else if(score > 60 && score <= 75){
+        return 'C';
+    }else if(score > 45 && score <= 60){
+        return 'D';
+    }else if(score <= 45){
+        return 'F';
+    }
+    return 0;
+}
 
 int main(){
 	//Input the number of students
-	int N,i = 0;
+	int N, i = 0, x = 0;
 	cout << "Enter the number of students: ";
 	cin >> N;
 	string name[N];
@@ -17,10 +30,11 @@ int main(){
 	while(i < N){
 		cout << "Name of student " << i+1 << ": ";
 		cin.ignore();
-		//[Missing Code 2] Get name of the i-th students that may include whitespace.
+		getline(cin,name[x]);
 		cout << "Score of student " << i+1 << ": ";
-		//[Missing Code 3] Get score of the i-th students.
+		cin >> score[x];
 		i++;
+		x++;
 	}
 	
 	//Print names scores and grades
